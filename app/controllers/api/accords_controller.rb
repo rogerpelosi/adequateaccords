@@ -16,6 +16,7 @@ class Api::AccordsController < ApplicationController
     end 
 
     def show 
+        @accord = Accord.find(params[:id])
         render json: @accord
     end 
 
@@ -25,8 +26,8 @@ class Api::AccordsController < ApplicationController
         params.permit(:subject, :content)
     end 
 
-    def set_accord 
-        @accord = Accord.find(params[:id])
-    end 
+    # def set_accord 
+    #     @accord = Accord.find(params[:id])
+    # end 
 
 end
