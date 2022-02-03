@@ -1,4 +1,4 @@
-class AccordsController < ApplicationController
+class Api::AccordsController < ApplicationController
 
     def create 
         @new_accord = Accord.new(accord_params)

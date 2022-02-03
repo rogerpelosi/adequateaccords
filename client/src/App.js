@@ -1,7 +1,7 @@
 import './App.css';
 
 import { useState, useEffect } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+// import { BrowserRouter } from 'react-router-dom';
 
 import AboutPage from './components/AboutPage';
 import EmailList from './components/EmailList';
@@ -12,10 +12,12 @@ function App() {
   const [emails, setEmails] = useState([]);
 
   useEffect(() => {
-
+    fetch('/api/accords')
+    .then(resp => resp.json())
+    .then(accordsArray => setEmails(accordsArray))
   },[])
 
-//kmsdfkmskdmfkmdfh
+  console.log(emails)
 
   return (
     <div className="App">

@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+
+  namespace :api do 
   
-  resources :accords, only: [:create, :index, :show]
+    resources :accords, only: [:create, :index, :show]
+
+  end 
 
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
